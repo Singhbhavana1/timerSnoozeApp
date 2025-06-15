@@ -60,4 +60,6 @@ For more information on using the Angular CLI, including detailed command refere
 
 # angular-timer-clock
 
+# timerSnoozeApp
+
 Angular Stop Timer ⏰ A simple Angular web app that lets you set a countdown timer. When the timer ends, an alert beep (alarm sound) is triggered to notify the user.
