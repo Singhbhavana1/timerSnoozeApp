@@ -1,0 +1,43 @@
+<div class="timer-container">
+  <h1>Timer App ⏱️</h1>
+  <div class="clock" *ngIf="!isRunning">
+    <div class="input-group">
+      <label for="minutes">Minutes</label>
+      <input
+        id="minutes"
+        type="number"
+        min="0"
+        placeholder="00"
+        [(ngModel)]="minute"
+      />
+    </div>
+    <div class="input-group">
+      <label for="seconds">Seconds</label>
+      <input
+        id="seconds"
+        type="number"
+        min="0"
+        max="59"
+        placeholder="00"
+        [(ngModel)]="seconds"
+      />
+    </div>
+  </div>
+  <div class="controls" *ngIf="(!isRunning && !isTimeUp) || !isPause">
+    <button *ngIf="isRunning" (click)="pauseTime()">Pause</button>
+    <button *ngIf="isPause" (click)="resumeTime()">Resume</button>
+    <button *ngIf="!isRunning" (click)="setTimer()">Start</button>
+    <button (click)="reset()">Reset</button>
+  </div>
+
+  <div *ngIf="isRunning">
+    <h2>Time Left: {{ timeFormatter }}</h2>
+  </div>
+
+  <div *ngIf="isTimeUp">
+    <h2>⏰ Time's Up!</h2>
+    <!-- <button (click)="reset()">Reset</button> -->
+  </div>
+
+  <!-- <audio src=""></audio> -->
+</div>
